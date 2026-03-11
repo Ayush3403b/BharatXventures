@@ -414,7 +414,7 @@ export default function IndustriesPage() {
         variants={staggerContainer}
         className="py-32 bg-gray-50 relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50 -skew-x-12 translate-x-1/2"></div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-stretch gap-20">
             <motion.div variants={imageReveal} className="w-full lg:w-1/2">
@@ -423,19 +423,10 @@ export default function IndustriesPage() {
                   variants={imageReveal}
                   alt="Modern architectural detail symbolizing cross-sector synergy and institutional growth"
                   className="w-full h-full object-cover"
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92c91f9?w=1200&auto=format&fit=crop"
+                  src="https://blog.architizer.com/wp-content/uploads/171625278127920201220_FJMT_Nunawading_Community_JG_0992_WAF_hi_res.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/30 to-transparent"></div>
-                <motion.div
-                  variants={fadeInUp}
-                  transition={{ delay: 0.3 }}
-                  className="absolute bottom-8 left-8 p-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl max-w-xs"
-                >
-                  <BarChart3 className="text-amber-400 mb-2" size={32} />
-                  <p className="text-white font-bold text-lg leading-snug">
-                    Cross-sector intelligence drives unconventional growth.
-                  </p>
-                </motion.div>
+               
               </div>
             </motion.div>
 

@@ -74,7 +74,7 @@ export default function AboutPage() {
         variants={fadeInUp}
         className="relative py-20 lg:py-24 overflow-hidden bg-white"
       >
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-50 -skew-x-12 translate-x-1/2"></div>
+        
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
