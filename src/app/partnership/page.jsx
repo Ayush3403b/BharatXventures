@@ -1,0 +1,526 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  Cpu,
+  Rocket,
+  Factory,
+  Globe,
+  Mail,
+  Phone,
+  Send,
+  Building2,
+  CheckCircle2,
+  MapPin,
+} from 'lucide-react';
+
+// Animation Variants (reused & slightly adjusted for this page)
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: 'easeOut' },
+  },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const cardHover = {
+  rest: { scale: 1, y: 0, boxShadow: '0 10px 15px -3px rgba(0,0,0,0.08)' },
+  hover: {
+    scale: 1.04,
+    y: -10,
+    boxShadow: '0 25px 35px -5px rgba(0,0,0,0.12)',
+    transition: { duration: 0.45, ease: 'easeOut' },
+  },
+};
+
+const imageReveal = {
+  hidden: { opacity: 0, scale: 0.94, y: 30 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 1.2, ease: 'easeOut' },
+  },
+};
+
+const buttonVariants = {
+  rest: { scale: 1 },
+  hover: { scale: 1.06, transition: { duration: 0.35 } },
+  tap: { scale: 0.97 },
+};
+
+export default function EcosystemPage() {
+  return (
+    <section className="bg-gray-50 text-gray-900 antialiased">
+      <main>
+        {/* Hero Section */}
+        <motion.section
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className="relative overflow-hidden pt-16 pb-24"
+        >
+          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div variants={fadeInUp} className="relative z-10">
+              <motion.div
+                variants={fadeInUp}
+                transition={{ delay: 0.1 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6"
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-600"></span>
+                </span>
+                Strategic Collaboration
+              </motion.div>
+
+              <motion.h1
+                variants={fadeInUp}
+                transition={{ delay: 0.2 }}
+                className="text-5xl lg:text-7xl font-black text-gray-900 leading-[1.1] mb-8"
+              >
+                Our Strategic{' '}
+                <span className="text-amber-500 underline decoration-blue-100 underline-offset-8 decoration-4">
+                  Ecosystem
+                </span>
+              </motion.h1>
+
+              <motion.p
+                variants={fadeInUp}
+                transition={{ delay: 0.3 }}
+                className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl"
+              >
+                Driving collective growth through institutional collaboration and venture building expertise. We
+                bridge the gap between global capital, industry leaders, and high-impact founders.
+              </motion.p>
+
+              <motion.div
+                variants={fadeInUp}
+                transition={{ delay: 0.4 }}
+                className="flex flex-wrap gap-4"
+              >
+                <motion.button
+                  whileHover="hover"
+                  whileTap="tap"
+                  variants={buttonVariants}
+                  className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-200/40 transition-all duration-300"
+                >
+                  Explore Network
+                </motion.button>
+
+                <motion.button
+                  whileHover="hover"
+                  whileTap="tap"
+                  variants={buttonVariants}
+                  className="border border-gray-200 bg-white text-gray-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300"
+                >
+                  View Methodology
+                </motion.button>
+              </motion.div>
+            </motion.div>
+
+            <motion.div variants={imageReveal} className="relative">
+              <div
+                className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative"
+                style={{
+                  backgroundImage:
+                    "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDALLK1ZWdhsDtG032CsDRicRe-WhjpPb8vbc86jESwVPDJfweh0WZMjmCtAhkHoW_Ga_deAsqh3tcyOnHvLgLa6WaqHleluxm288pEa535QnlQZIkbGmxZei4dSG8SyoobSfMEVXXjRQUPekco3uLHWcje954Ug1-pi_HmTGhR6fOF5d_dhjERRZtSPyarnJ5nFTGe0DpQgmP_3isoWHb41s2SOgv1iH35NZ7MynHZVojBNJnB2iOTb-tmfvViV93ck006sTe7kMds')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <div className="absolute inset-0 bg-blue-600/10"></div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.7 }}
+                className="absolute -bottom-10 -left-10 bg-white p-8 rounded-2xl shadow-xl max-w-[280px] border border-gray-100"
+              >
+                <p className="text-amber-500 font-bold text-3xl mb-1">50+</p>
+                <p className="text-sm font-semibold text-gray-600 uppercase tracking-tighter">
+                  Institutional Partners Globally
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Partner Categories */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={staggerContainer}
+          className="py-24 bg-white"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div variants={fadeInUp} className="text-center mb-20">
+              <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-gray-900 mb-4">
+                Partner Categories
+              </motion.h2>
+              <motion.p variants={fadeInUp} transition={{ delay: 0.1 }} className="text-gray-600 max-w-2xl mx-auto">
+                Our ecosystem is built on four pillars of collaboration, each essential to the lifecycle of venture
+                development.
+              </motion.p>
+            </motion.div>
+
+            <motion.div variants={staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Technology Partners */}
+              <motion.div
+                variants={cardHover}
+                whileHover="hover"
+                className="group p-8 rounded-2xl border border-gray-100 bg-white hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-100/40"
+              >
+                <div className="size-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                  <Cpu size={28} strokeWidth={1.6} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Technology Partners</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  Providing advanced infrastructure, AI modeling, and digital transformation toolkits to accelerate R&D.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    Cloud Infrastructure
+                  </li>
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    R&D Collaboration
+                  </li>
+                </ul>
+              </motion.div>
+
+              {/* Startup Ecosystem */}
+              <motion.div
+                variants={cardHover}
+                whileHover="hover"
+                className="group p-8 rounded-2xl border border-gray-100 bg-white hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-100/40"
+              >
+                <div className="size-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                  <Rocket size={28} strokeWidth={1.6} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Startup Ecosystem</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  Incubators, accelerators, and VC networks that funnel talent and disruptive ideas into our pipeline.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    Deal Flow Sharing
+                  </li>
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    Mentorship Access
+                  </li>
+                </ul>
+              </motion.div>
+
+              {/* Industry Partners */}
+              <motion.div
+                variants={cardHover}
+                whileHover="hover"
+                className="group p-8 rounded-2xl border border-gray-100 bg-white hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-100/40"
+              >
+                <div className="size-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                  <Factory size={28} strokeWidth={1.6} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Industry Partners</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  Market leaders and manufacturing hubs providing real-world testing grounds and industrial scale.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    Supply Chain Integration
+                  </li>
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    Pilot Programs
+                  </li>
+                </ul>
+              </motion.div>
+
+              {/* Export Ecosystem */}
+              <motion.div
+                variants={cardHover}
+                whileHover="hover"
+                className="group p-8 rounded-2xl border border-gray-100 bg-white hover:border-blue-300/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-100/40"
+              >
+                <div className="size-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                  <Globe size={28} strokeWidth={1.6} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Export Ecosystem</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  Global trade bodies and cross-border logistics partners facilitating international market entry.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    Global Compliance
+                  </li>
+                  <li className="flex items-center gap-2 text-xs font-semibold text-gray-500">
+                    <CheckCircle2 className="text-blue-500" size={16} />
+                    Trade Facilitation
+                  </li>
+                </ul>
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Global Reach */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={staggerContainer}
+          className="py-24 bg-gray-50"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div variants={fadeInUp} className="flex flex-col lg:flex-row gap-16 items-center">
+              <motion.div variants={fadeInUp} className="lg:w-1/2">
+                <motion.h2
+                  variants={fadeInUp}
+                  transition={{ delay: 0.1 }}
+                  className="text-4xl font-bold text-gray-900 mb-6 leading-tight"
+                >
+                  Global Network Reach
+                </motion.h2>
+                <motion.p variants={fadeInUp} transition={{ delay: 0.2 }} className="text-gray-600 mb-8 leading-relaxed">
+                  Our presence extends across major industrial and technology hubs. We leverage local insights with
+                  global standards to ensure our portfolio companies can scale without borders.
+                </motion.p>
+
+                <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-6">
+                  <motion.div variants={fadeInUp} className="flex items-start gap-3">
+                    <MapPin className="text-amber-500 mt-1" size={20} />
+                    <div>
+                      <h4 className="font-bold text-gray-900">Mumbai</h4>
+                      <p className="text-xs text-gray-600 uppercase tracking-widest font-semibold">Financial HQ</p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div variants={fadeInUp} className="flex items-start gap-3">
+                    <MapPin className="text-amber-500 mt-1" size={20} />
+                    <div>
+                      <h4 className="font-bold text-gray-900">Singapore</h4>
+                      <p className="text-xs text-gray-600 uppercase tracking-widest font-semibold">Global Trade</p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div variants={fadeInUp} className="flex items-start gap-3">
+                    <MapPin className="text-amber-500 mt-1" size={20} />
+                    <div>
+                      <h4 className="font-bold text-gray-900">Bangalore</h4>
+                      <p className="text-xs text-gray-600 uppercase tracking-widest font-semibold">Tech & R&D Hub</p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div variants={fadeInUp} className="flex items-start gap-3">
+                    <MapPin className="text-amber-500 mt-1" size={20} />
+                    <div>
+                      <h4 className="font-bold text-gray-900">Dubai</h4>
+                      <p className="text-xs text-gray-600 uppercase tracking-widest font-semibold">
+                        Logistics Corridor
+                      </p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div variants={imageReveal} className="lg:w-1/2 w-full h-[400px] rounded-3xl overflow-hidden bg-gray-200 relative group border-4 border-white shadow-2xl shadow-blue-100/30">
+                <div className="absolute inset-0 bg-blue-600/10 mix-blend-multiply transition-opacity group-hover:opacity-5 duration-500"></div>
+                <motion.img
+                  variants={imageReveal}
+                  alt="World map highlighting global industrial and tech hubs connected digitally"
+                  className="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXaDRmtZi4CadVGXSB6iGquSOnVeH7onrcg5KOepMKhlFQgTDna6p_Yb2PmJjmVvkFyNDMndllo1iJ8o8YEtdxa2c1iQBwpkSU0a4RRXVPh-Gu1FOVt76E8IRa_0GtrdjPzc2g5DerX-wACAGl83PsCI-tARAGGpk3mTXbhTadOO4G6OpVkginQwWidzXsVc_qQ-fH3yp-Wcdy1MD_OadTu_0b6_7c66UKZJXJojDQS_sFqQarbjr1Dek2rE7-i72zMj0cVOp8nm4b"
+                />
+              </motion.div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* CTA / Partnership Form */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={fadeInUp}
+          className="py-24 bg-white overflow-hidden"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="bg-blue-600 rounded-[2.5rem] p-8 lg:p-16 flex flex-col lg:flex-row gap-16 items-center relative overflow-hidden">
+              {/* Decorative blur */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-amber-400/10 blur-[100px] rounded-full -mr-48 -mt-48"></div>
+
+              <motion.div variants={fadeInUp} className="relative z-10 lg:w-1/2">
+                <motion.h2 variants={fadeInUp} className="text-4xl font-bold text-white mb-6">
+                  Become a Strategic Partner
+                </motion.h2>
+                <motion.p
+                  variants={fadeInUp}
+                  transition={{ delay: 0.1 }}
+                  className="inline-block bg-white/15 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6"
+                >
+                  Collaboration Form
+                </motion.p>
+                <motion.p
+                  variants={fadeInUp}
+                  transition={{ delay: 0.2 }}
+                  className="text-gray-100 text-lg leading-relaxed mb-8"
+                >
+                  Are you looking to co-build the next generation of industrial powerhouses? Join our network of
+                  leaders, visionaries, and institutional builders.
+                </motion.p>
+
+                <motion.div variants={fadeInUp} transition={{ delay: 0.3 }} className="flex flex-col gap-4 text-gray-100">
+                  <div className="flex items-center gap-4">
+                    <Mail size={20} />
+                    <span>ecosystem@bharatxventures.com</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <Phone size={20} />
+                    <span>+91 (022) 4000 5000</span>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                variants={fadeInUp}
+                transition={{ delay: 0.4 }}
+                className="relative z-10 lg:w-1/2 w-full bg-white p-8 lg:p-10 rounded-3xl shadow-2xl"
+              >
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        htmlFor="companyName"
+                        className="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2"
+                      >
+                        Company/Organization Name
+                      </label>
+                      <input
+                        id="companyName"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all duration-200"
+                        placeholder="Company Name"
+                        type="text"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="partnerType"
+                        className="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2"
+                      >
+                        Partner Type
+                      </label>
+                      <select
+                        id="partnerType"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all duration-200 bg-white"
+                      >
+                        <option>Technology</option>
+                        <option>Industry</option>
+                        <option>Venture/VC</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+
+                    <div className="md:col-span-2">
+                      <label
+                        htmlFor="collaborationArea"
+                        className="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2"
+                      >
+                        Preferred Collaboration Area
+                      </label>
+                      <select
+                        id="collaborationArea"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all duration-200 bg-white"
+                      >
+                        <option>SME Growth</option>
+                        <option>Industrial AI</option>
+                        <option>Agri-Export</option>
+                        <option>Strategic Consulting</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2"
+                    >
+                      Phone Number
+                    </label>
+                    <input
+                      id="phone"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all duration-200"
+                      placeholder="+91 00000 00000"
+                      type="tel"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2"
+                    >
+                      Official Email Address
+                    </label>
+                    <input
+                      id="email"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all duration-200"
+                      placeholder="contact@company.com"
+                      type="email"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-xs font-bold text-gray-600 uppercase tracking-wider mb-2"
+                    >
+                      How can we collaborate? (Briefly describe your objectives)
+                    </label>
+                    <textarea
+                      id="message"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all duration-200 resize-none"
+                      placeholder="Our objectives..."
+                      rows={4}
+                    />
+                  </div>
+
+                  <motion.button
+                    whileHover="hover"
+                    whileTap="tap"
+                    variants={buttonVariants}
+                    type="submit"
+                    className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-blue-200/30 hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    Send Inquiry
+                    <Send size={18} />
+                  </motion.button>
+                </form>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+      </main>
+    </section>
+  );
+}

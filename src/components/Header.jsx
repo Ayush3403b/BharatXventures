@@ -1,0 +1,205 @@
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Building2, Menu, X, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export default function Header() {
+  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about-us" },
+    { name: "Services", path: "/service" },
+    { name: "Industries", path: "/industry" },
+    { name: "Projects", path: "/project" },
+  ];
+
+  const extraLinks = [
+    { name: "Governance", path: "/governance" },
+    { name: "Contact", path: "/contact-us" },
+  ];
+
+  const isActive = (path) =>
+    pathname === path || (path !== "/" && pathname.startsWith(path));
+
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  return (
+    <>
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <div className="size-10 bg-blue-600 flex items-center justify-center rounded-lg shadow-lg shadow-blue-200/40">
+              <Building2 className="text-white" size={24} strokeWidth={1.8} />
+            </div>
+
+            <div className="flex flex-col">
+              <h1 className="text-blue-700 text-xl font-bold leading-none tracking-tight">
+                Bharatx Ventures
+              </h1>
+              <span className="text-[10px] text-blue-500 font-semibold tracking-[0.25em] uppercase mt-0.5">
+                Private Limited
+              </span>
+            </div>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className={`relative text-sm font-medium transition-colors duration-200 ${
+                    active
+                      ? "text-blue-600 font-semibold"
+                      : "text-gray-700 hover:text-blue-600"
+                  }`}
+                >
+                  {link.name}
+                  {active && (
+                    <motion.span
+                      layoutId="underline"
+                      className="absolute left-0 bottom-[-6px] w-full h-0.5 bg-blue-600 rounded-full"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Desktop Actions */}
+          {/* <div className="hidden lg:flex items-center gap-4">
+            {extraLinks.map((link) => {
+              const active = isActive(link.path);
+              return (
+                <Link key={link.name} href={link.path}>
+                  <button
+                    className={`px-5 h-10 rounded-lg text-sm font-semibold transition-all duration-200 ${
+                      active
+                        ? 'bg-blue-600 text-white shadow-md shadow-blue-200/40'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {link.name}
+                  </button>
+                </Link>
+              );
+            })}
+          </div> */}
+
+          <div className="flex items-center gap-3">
+            <Link href="/governance">
+              <button className="hidden md:flex items-center justify-center px-5 h-10 rounded-lg bg-gray-100 text-gray-700 text-sm font-semibold hover:bg-gray-200 transition-colors duration-200">
+                Governance
+              </button>
+            </Link>
+            <Link href="/contact-us">
+              <button className="flex items-center justify-center px-6 h-10 rounded-lg bg-blue-600 text-white text-sm font-semibold shadow-md shadow-blue-200/40 hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+                Contact
+              </button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden text-gray-700 focus:outline-none"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Slide-in Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden"
+              onClick={toggleMobileMenu}
+            />
+
+            {/* Sidebar */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 lg:hidden overflow-y-auto"
+            >
+              <div className="p-6 border-b border-gray-200">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="size-10 bg-blue-600 flex items-center justify-center rounded-lg">
+                      <Building2 className="text-white" size={24} />
+                    </div>
+                    <h1 className="text-blue-700 text-xl font-bold">Bharatx</h1>
+                  </div>
+                  <button onClick={toggleMobileMenu} aria-label="Close menu">
+                    <X size={28} className="text-gray-700" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="p-6 flex flex-col gap-6">
+                {/* Main Nav */}
+                {navLinks.map((link) => {
+                  const active = isActive(link.path);
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.path}
+                      onClick={toggleMobileMenu}
+                      className={`flex items-center justify-between text-lg font-medium ${
+                        active ? "text-blue-600" : "text-gray-800"
+                      }`}
+                    >
+                      {link.name}
+                      {active && <ArrowRight size={20} />}
+                    </Link>
+                  );
+                })}
+
+                <div className="h-px bg-gray-200 my-4" />
+
+                {/* Extra Links */}
+                {extraLinks.map((link) => {
+                  const active = isActive(link.path);
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.path}
+                      onClick={toggleMobileMenu}
+                      className={`flex items-center justify-between text-lg font-medium ${
+                        active ? "text-blue-600" : "text-gray-800"
+                      }`}
+                    >
+                      {link.name}
+                      {active && <ArrowRight size={20} />}
+                    </Link>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
