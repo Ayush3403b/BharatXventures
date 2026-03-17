@@ -185,7 +185,7 @@ export default function AboutPage() {
               <Eye className="text-blue-200 mb-6" size={48} strokeWidth={1.5} />
               <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
               <p className="text-blue-100 text-lg leading-relaxed">
-                To be India's leading venture developer scaling local
+                To be India`s leading venture developer scaling local
                 enterprises to global standards. We envision a future where
                 Indian SMEs lead global market innovations.
               </p>
@@ -446,10 +446,10 @@ export default function AboutPage() {
               >
                 <Quote className="absolute -top-6 -left-8 text-7xl text-gray-200 -z-10" />
                 <p className="text-xl text-gray-600 leading-relaxed italic">
-                  "Bharatx Ventures was founded on the principle of
-                  institutionalizing the Indian SME sector. We don't just
+                  Bharatx Ventures was founded on the principle of
+                  institutionalizing the Indian SME sector. We don`t just
                   provide capital; we provide the strategic scaffolding required
-                  for homegrown businesses to evolve into global titans."
+                  for homegrown businesses to evolve into global titans.
                 </p>
               </motion.div>
 
@@ -511,7 +511,7 @@ export default function AboutPage() {
             >
               Our leadership is comprised of seasoned industry veterans,
               strategic consultants, and policy experts committed to scaling
-              India's industrial landscape.
+              India`s industrial landscape.
             </motion.p>
           </motion.div>
 
@@ -540,7 +540,7 @@ export default function AboutPage() {
                 className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-200"
               >
                 <div className="aspect-[4/5] bg-gray-200">
-                  <img
+                  <image
                     src={leader.src.src}
                     alt={leader.name}
                     className="w-full h-full object-cover transition-all duration-500"
