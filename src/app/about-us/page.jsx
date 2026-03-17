@@ -540,7 +540,7 @@ export default function AboutPage() {
                 className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-200"
               >
                 <div className="aspect-[4/5] bg-gray-200">
-                  <image
+                  <img
                     src={leader.src.src}
                     alt={leader.name}
                     className="w-full h-full object-cover transition-all duration-500"

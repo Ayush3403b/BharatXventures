@@ -215,7 +215,7 @@ export default function FeaturedInitiativesPage() {
                     className="relative rounded-2xl overflow-hidden shadow-2xl group aspect-[4/3]"
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 to-transparent z-10" />
-                    <image
+                    <img
                       alt={`${study.title} - Bharatx Ventures project showcase`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       src={study.image}

@@ -429,7 +429,7 @@ export default function ServicesPage() {
             </motion.div>
 
             <motion.div variants={imageReveal} className="w-full md:w-1/2">
-              <image
+              <img
                 alt="Agile team meeting in a bright modern workspace discussing venture acceleration strategies"
                 className="rounded-2xl shadow-2xl border border-gray-200"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL2EVBJaADw_d0se4CXwqDLeftqIZQ7DM3m1HZp60fgRetcWHXFwwOXyhcwihGwGILf3xomf0SA6PF4Y8LJyfETAB5kzm_AIfGBx0Sh9ltcP3lzFC0UKfypRH0YjQ_GFi3kNeQcYZtTQSaXUIWBgIc4wv0mXO069_k5giCAGpoQdT-Mfrw1GO3LOoX84LMx6hnpGtkYGpY0nc_bf_5Y7xfzFQ4h0dDlIHbwah-bN_INnF7Ne2_QL8fOxF2kOB7MkHKxwshYIt7jkI4"
@@ -522,7 +522,7 @@ export default function ServicesPage() {
             </motion.div>
 
             <motion.div variants={imageReveal} className="w-full md:w-1/2">
-              <image
+              <img
                 alt="Vast green agricultural landscape with modern irrigation and processing technology"
                 className="rounded-2xl shadow-2xl brightness-90 hover:brightness-100 transition-all duration-700"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1iAWU-RQGI4CpnH6X_LiS1z9bTCbhnofVZEJIfyjX7thvtX6KqsQopdxca7jt1VXuqT4T8JdFME9OvNtn2-FuUazHudfWt1jeZn3fkWUmR73GSOG9v9LOq7awnhj82Cy6t8ZEi6kp8zIXwuh_j9Dt1q0GlSw0N-H5k0F-ubf2E54aMaEAt9fXyVPwGXGYmRSuuUuQPnaBUBki670ssTfZ11Pmd7UTrXd2UhWPixF_AOx5bQHbvKxMnGYVxQJiTxNXabmu4OrP6QfI"
@@ -617,7 +617,7 @@ export default function ServicesPage() {
             </motion.div>
 
             <motion.div variants={imageReveal} className="w-full md:w-1/2">
-              <image
+              <img
                 alt="High-tech robotic arm and automation systems operating in a modern clean factory environment"
                 className="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtGdEnAblW6Of4dowdt9NlGY50uhcqPbAqyr5JIufSfXKgINx_PVbvUwcrW_obr3lNcniD6UpQGXG8ALbi7vv4bWw9p7vLLWyKV0Rrpu1IZ0WhsIOx_F5TQ9auzupjKJcMCjBoBaCsVa-V9bD99JEfaLlSGKJjSf8hH2v_cEQ9dqc7qsVbirlkppId4ytGwaVfwGXwNAoO3vU70zrnhkoY6JkDwbnDWOnhAGEZnRO5HyMgR937TjJwqpsEWmPRYojb9EfO4hdxo1BH"
